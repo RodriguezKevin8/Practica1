@@ -1,0 +1,103 @@
+﻿@* Inicio del Formulario*@
+
+@{
+    IEnumerable<string> strList = new List<string> { "POO", "TW", "MAT3", "FIS1" };
+}
+
+<form asp-action="Create">
+    <div class="container vh-100 w-50">
+        <h1>Agregar Usuarios</h1>
+        <br />
+        <div class="form-group row">
+            <div class="row">
+                <div class="col-md-4 pb-4">
+                    <label>Nombre Usuario:</label>
+                </div>
+                <div class="col-md-8 pb-4">
+                    @Html.TextBox("Nombre", "", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 pb-4">
+                    <label>Contraseña:</label>
+                </div>
+                <div class="col-md-8 pb-4">
+                    @Html.Password("Contrasenia", "", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 pb-4">
+                    <label>Género:</label>
+                </div>
+                <div class="col-md-4 pb-4">
+                    @Html.RadioButton("Genero", "Masculino", true, new { @id = "masculino" }) Masculino
+                </div>
+                <div class="col-md-4 pb-4">
+                    @Html.RadioButton("Genero", "Femenino", true, new { @id = "femenino" }) Femenino
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 pb-4">
+                    <label>Dirección:</label>
+                </div>
+                <div class="col-md-8 pb-4">
+                    @Html.TextArea("Direccion", "", new { @class = "form-control", id = "idDireccion" })
+                </div>
+            </div>
+
+            <div class="row d-flex">
+                <div class="col-md-4 pb-4">
+                    <label>Pasatiempos:</label>
+                </div>
+                <div class="col-md-2 pb-4">
+                    @Html.CheckBox("Bailar", false, new { id = "Escalar", @class = "form-check-input", name = "Pasatiempo", value = "Escalar" })
+                    Escalar
+                </div>
+                <div class="col-md-2 pb-4">
+                    <input type="checkbox" id="Correr" name="Pasatiempo" value="Correr" /> Correr
+                </div>
+                <div class="col-md-2 pb-4">
+                    <input type="checkbox" id="Escalar" name="Pasatiempo" value="Escalar" /> Escalar
+                </div>
+                <div class="col-md-2 pb-4">
+                    <input type="checkbox" id="Peliculas" name="Pasatiempo" value="Pelicula" /> Películas
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 pb-4">
+                    <label>Curso:</label>
+                </div>
+                <div class="col-md-8 pb-4">
+                    <select id="ddlCurso" name="ddlCurso" class="form-control">
+                        <option value="">--Seleccionar curso---</option>
+                        @foreach (var item in strList)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 pb-4">
+                    <label>Conocimientos:</label>
+                </div>
+                <div class="col-md-8 pb-4">
+                    <select id="Seleccionar habilidades" name="Seleccionar habilidades" class="form-control" multiple>
+                        <option value="1">C#</option>
+                        <option value="2">ASP.NET</option>
+                        <option value="3">ASP.NET Core</option>
+                        <option value="4">Azure</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" class="btn btn-dark" value="Guardar Datos" />
+            </div>
+        </div>
+    </div>
+</form>
