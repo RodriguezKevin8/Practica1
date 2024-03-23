@@ -19,5 +19,5 @@ public partial class Usuario
 
     public string? Curso { get; set; }
 
-    public string? Conocimiento { get; set; }
+    public List<string>? Conocimiento { get; set; }
 }

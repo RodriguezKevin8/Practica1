@@ -1,4 +1,4 @@
-﻿@* Inicio del Formulario*@
+﻿@* *@
 
 @{
     IEnumerable<string> strList = new List<string> { "POO", "TW", "MAT3", "FIS1" };
@@ -32,10 +32,10 @@
                     <label>Género:</label>
                 </div>
                 <div class="col-md-4 pb-4">
-                    @Html.RadioButton("Genero", "Masculino", true, new { @id = "masculino" }) Masculino
+                    @Html.RadioButton("Genero", "M", true, new { @id = "masculino" }) Masculino
                 </div>
                 <div class="col-md-4 pb-4">
-                    @Html.RadioButton("Genero", "Femenino", true, new { @id = "femenino" }) Femenino
+                    @Html.RadioButton("Genero", "F", true, new { @id = "femenino" }) Femenino
                 </div>
             </div>
 
@@ -53,12 +53,12 @@
                     <label>Pasatiempos:</label>
                 </div>
                 <div class="col-md-2 pb-4">
-                    @Html.CheckBox("Bailar", false, new { id = "Escalar", @class = "form-check-input", name = "Pasatiempo", value = "Escalar" })
-                    Escalar
+                    <input type="checkbox" id="Bailar" name="Pasatiempo" value="Bailar" /> Bailar
                 </div>
                 <div class="col-md-2 pb-4">
                     <input type="checkbox" id="Correr" name="Pasatiempo" value="Correr" /> Correr
                 </div>
+               
                 <div class="col-md-2 pb-4">
                     <input type="checkbox" id="Escalar" name="Pasatiempo" value="Escalar" /> Escalar
                 </div>
@@ -72,7 +72,7 @@
                     <label>Curso:</label>
                 </div>
                 <div class="col-md-8 pb-4">
-                    <select id="ddlCurso" name="ddlCurso" class="form-control">
+                    <select id="ddlCurso" name="Curso" class="form-control">
                         <option value="">--Seleccionar curso---</option>
                         @foreach (var item in strList)
                         {
@@ -87,16 +87,16 @@
                     <label>Conocimientos:</label>
                 </div>
                 <div class="col-md-8 pb-4">
-                    <select id="Seleccionar habilidades" name="Seleccionar habilidades" class="form-control" multiple>
-                        <option value="1">C#</option>
-                        <option value="2">ASP.NET</option>
-                        <option value="3">ASP.NET Core</option>
-                        <option value="4">Azure</option>
+                    <select id="SeleccionarHabilidades" name="Conocimiento" class="form-control" multiple>
+                        <option value="C#">C#</option>
+                        <option value="ASP.NET">ASP.NET</option>
+                        <option value="ASP.NET Core">ASP.NET Core</option>
+                        <option value="Azure">Azure</option>
                     </select>
                 </div>
             </div>
             <div class="row">
-                <input type="submit" class="btn btn-dark" value="Guardar Datos" />
+                <input type="submit" class="btn btn-primary w-50" value="Guardar D" />
             </div>
         </div>
     </div>
